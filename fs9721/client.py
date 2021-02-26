@@ -120,7 +120,7 @@ class Client(object):
         # first get a set of bytes and validate it.
         # if the first doesn't validate, synch and get a new set.
         success = False
-        for readAttempt in xrange(self.retries):
+        for readAttempt in range(self.retries):
             bytes = self.ser.read(self.bytesPerRead)
             if len(bytes) != self.bytesPerRead:
                 self._synchronize()
